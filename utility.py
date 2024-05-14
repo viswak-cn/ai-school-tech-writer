@@ -47,7 +47,7 @@ def call_openai(prompt):
         response = client.invoke(input=messages)
         # We use the StrOutputParser to parse the response as this class can adapt to providers like OpenAI, Llama and others.
         parser = StrOutputParser()
-        content = parser.parse(input=response)
+        content = parser.invoke(input=response)
         return content
     except Exception as e:
         print(f"Error calling OpenAI: {e}")
